@@ -1,0 +1,9 @@
+{
+    "steps": [
+        "step 1: Login at https://www.saucedemo.com/ --> navigate to Page_inventory-item_html",
+        "step 2: At Page_inventory-item_html click on button_back_to_products --> navigate to Page_inventory_html",
+        "step 3: At Page_inventory_html click on button_add_to_cart_sauce_labs_bike_light",
+        "step 4: At Page_inventory_html click on button_react_burger_menu_btn",
+        "step 5: Add visual checkpoint at Page_inventory_html"
+    ]
+}
