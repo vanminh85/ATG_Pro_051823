@@ -1,0 +1,15 @@
+{
+    "steps": [
+        "step 1: Login at https://www.saucedemo.com/ --> navigate to Page_inventory-item_html",
+        "step 2: At Page_inventory-item_html click on button_back_to_products --> navigate to Page_inventory_html",
+        "step 3: At Page_inventory_html click on hyperlink_object --> navigate to Page_cart_html",
+        "step 4: At Page_cart_html click on hyperlink_object",
+        "step 5: At Page_cart_html click on hyperlink_object",
+        "step 6: At Page_cart_html click on hyperlink_object",
+        "step 7: At Page_cart_html click on hyperlink_object",
+        "step 8: At Page_cart_html click on button_remove_sauce_labs_bike_light",
+        "step 9: At Page_cart_html click on button_checkout --> navigate to Page_checkout-step-one_html",
+        "step 10: At Page_checkout-step-one_html click on button_react_burger_menu_btn",
+        "step 11: Add visual checkpoint at Page_checkout-step-one_html"
+    ]
+}
