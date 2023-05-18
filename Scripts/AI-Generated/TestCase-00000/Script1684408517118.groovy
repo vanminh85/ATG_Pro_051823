@@ -1,7 +1,7 @@
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import internal.GlobalVariable as GlobalVariable
 
 'Initialize test session: Open browser and set view port'
@@ -76,23 +76,9 @@ WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory-it
 
 WebUI.enhancedClick(testObj)
 
-'step 3: At Page_inventory_html click on button_add_to_cart_sauce_labs_bike_light'
+'step 3: At Page_inventory_html click on button_add_to_cart_sauce_labs_backpack'
 
-testObj = findTestObject('Object Repository/Page_inventory_html/button_object')
-
-WebUI.delay(3)
-
-WebUI.takeScreenshot()
-
-WebUI.verifyElementPresent(testObj, 20, FailureHandling.CONTINUE_ON_FAILURE)
-
-WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory.html(?:#.*)?(?:\\?.*)?$', true)
-
-WebUI.enhancedClick(testObj)
-
-'step 4: At Page_inventory_html click on button_react_burger_menu_btn'
-
-testObj = findTestObject('Object Repository/Page_inventory_html/button_object_1')
+testObj = findTestObject('Object Repository/Page_inventory_html/button_add_to_cart_sauce_labs_backpack')
 
 WebUI.delay(3)
 
@@ -104,7 +90,21 @@ WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory.ht
 
 WebUI.enhancedClick(testObj)
 
-'step 5: Add visual checkpoint at Page_inventory_html'
+'step 4: At Page_inventory_html click on hyperlink_object --> navigate to Page_cart_html'
+
+testObj = findTestObject('Object Repository/Page_inventory_html/hyperlink_object_3')
+
+WebUI.delay(3)
+
+WebUI.takeScreenshot()
+
+WebUI.verifyElementPresent(testObj, 20, FailureHandling.CONTINUE_ON_FAILURE)
+
+WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory.html(?:#.*)?(?:\\?.*)?$', true)
+
+WebUI.enhancedClick(testObj)
+
+'step 5: Add visual checkpoint at Page_cart_html'
 
 WebUI.takeFullPageScreenshotAsCheckpoint('TestCase-00000_visual_checkpoint')
 
