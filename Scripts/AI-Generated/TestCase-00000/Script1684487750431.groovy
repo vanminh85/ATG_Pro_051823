@@ -1,8 +1,8 @@
-import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.model.FailureHandling
 import internal.GlobalVariable as GlobalVariable
-import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
+import com.kms.katalon.core.model.FailureHandling
+import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 
 'Initialize test session: Open browser and set view port'
 
@@ -66,9 +66,37 @@ WebUI.delay(15)
 
 WebUI.navigateToUrl(GlobalVariable.application_domain + '/inventory.html')
 
-'step 3: Add visual checkpoint at Page_inventory_html'
+'step 3: At Page_inventory_html click on button_react_burger_menu_btn'
 
-WebUI.takeFullPageScreenshotAsCheckpoint('TestCase-00001_visual_checkpoint')
+testObj = findTestObject('Object Repository/Page_inventory_html/button_object_1')
+
+WebUI.delay(3)
+
+WebUI.takeScreenshot()
+
+WebUI.verifyElementPresent(testObj, 20, FailureHandling.CONTINUE_ON_FAILURE)
+
+WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory.html(?:#.*)?(?:\\?.*)?$', true)
+
+WebUI.enhancedClick(testObj)
+
+'step 4: At Page_inventory_html click on hyperlink_object --> navigate to Page_cart_html'
+
+testObj = findTestObject('Object Repository/Page_inventory_html/hyperlink_object_3')
+
+WebUI.delay(3)
+
+WebUI.takeScreenshot()
+
+WebUI.verifyElementPresent(testObj, 20, FailureHandling.CONTINUE_ON_FAILURE)
+
+WS.verifyMatch(WebUI.getUrl(), GlobalVariable.application_domain +'/inventory.html(?:#.*)?(?:\\?.*)?$', true)
+
+WebUI.enhancedClick(testObj)
+
+'step 5: Add visual checkpoint at Page_cart_html'
+
+WebUI.takeFullPageScreenshotAsCheckpoint('TestCase-00000_visual_checkpoint')
 
 'Terminate test session: Close browser'
 
